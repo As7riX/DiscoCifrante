@@ -25,15 +25,15 @@ public class Main {
             switch(Menu_Input) {
             
             case 1: 
-            	msg = sc.nextString();
+            	msg = sc.nextLine();
             	break;
             case 2:
             	break;
             case 3:
             	System.out.println("inserisci messaggio criptato:");
-            	cript = sc.nextString();
+            	cript = sc.nextLine();
             	System.out.println("inserisci chiave di decriptazione:");
-            	key = sc.nextString();
+            	key = sc.nextLine();
             	break;
             default:
             		break;
