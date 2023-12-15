@@ -18,8 +18,8 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             Menu_Input = sc.nextInt();
             
-            string msg;
-            string cript;
+            String msg;
+            String cript;
             char key;
             
             switch(Menu_Input) {
