@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
     	
     	Criptazione c = new Criptazione();
-    	Decriptazioone d = Decriptazione();
+    	Decriptazioone d = new Decriptazione();
     	
         int Menu_Input;
 
