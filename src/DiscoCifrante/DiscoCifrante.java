@@ -17,7 +17,7 @@ public class DiscoCifrante {
         boolean trovato = false;
 
         while (i < 24 && !trovato) {
-            if (key == caratteriCriptati[i]) {
+            if (key == caratteriChiaro[i]) {
                 this.key = i;
                 trovato = true;
             }
@@ -37,7 +37,7 @@ public class DiscoCifrante {
         boolean trovato = false;
 
         while (i < 24 && !trovato) {
-            if (index == caratteriChiaro[i]) {
+            if (index == caratteriCriptati[i]) {
                 this.index = i;
                 trovato = true;
             }
