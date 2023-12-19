@@ -1,18 +1,37 @@
 package DiscoCifrante;
 
+/**
+ * Classe che rappresenta il Disco Cifrante di Leon Battista Alberti.
+ * Informazioni: <a href="https://it.wikipedia.org/wiki/Disco_cifrante">Wikipedia.org</a> <a href="http://www.crittologia.eu/storia/storia.html">Crittologia.eu</a>
+ *
+ */
 public class DiscoCifrante {
 
+    /**
+     * Array di char che rappresentano i caratteri della ruota esterna.
+     */
     private final char[] caratteriChiaro = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z',  '1', '2', '3', '4'};
+
+    /**
+     * Array di char che rappresentano i caratteri della ruota interna.
+     */
     private final char[] caratteriCriptati = {'m', 'o', 'e', 'b', 'k', 'x', 'i', 'h', 'c', 'n', 'z', 'u', 'r', 'y', 'p', 'a', 'g', 'q', 'l', 'd', 'f', 't', 's', '&'};
+
+    /**
+     * Indice interno.
+     */
     private int index;
+
+    /**
+     * Indice esterno.
+     */
     private int key;
 
     /**
-     * Funzione costruttore
-     * @param key carattere chiave decriptazione
+     * Funzione costruttore.
+     * @param key chiave decriptazione.
      */
     public DiscoCifrante(char key){
-
         int i = 0;
         boolean trovato = false;
 
@@ -29,8 +48,8 @@ public class DiscoCifrante {
     }
 
     /**
-     * Imposta l'indice (Lettera Maiuscola) in modo che coincida con la chiave.
-     * @param index carattere indice
+     * Imposta l'indice in modo che coincida con la chiave.
+     * @param index indice (Lettera Minuscola).
      */
     public void setIndex(char index){
         int i = 0;
@@ -46,24 +65,30 @@ public class DiscoCifrante {
     }
 
     /**
-     * Funzione che decifra un carattere in base ai valori della chiave e dell'indice
-     * @param carattere char - Carattere da decifrare
-     * @return char - Carattere decifrare
+     * Funzione che decifra un carattere in base ai valori della chiave e dell'indice.
+     * @param carattere Carattere da decifrare.
+     * @return Carattere decifrarato.
      */
     public char getChiaro(char carattere){
         char r = '\n';
+        int i = 0;
+        boolean trovato = false;
 
-        for (int i = 0; i < 24; i++)
-            if (caratteriCriptati[i] == carattere)
+        while(i < 24 && !trovato){
+            if (caratteriCriptati[i] == carattere) {
                 r = caratteriChiaro[getPosChiaro(i)];
+                trovato = true;
+            }
+            i++;
+        }
 
         return r;
     }
 
     /**
-     * Funzione che cripta un carattere in base ai valori della chiave e dell'indice
-     * @param carattere char - carattere da criptare
-     * @return char - carattere criptato
+     * Funzione che cripta un carattere in base ai valori della chiave e dell'indice.
+     * @param carattere carattere da criptare.
+     * @return carattere criptato.
      */
     public char getCript(char carattere){
         char r = '\n';
@@ -78,11 +103,14 @@ public class DiscoCifrante {
             i++;
         }
 
-
-
         return r;
     }
 
+    /**
+     * Funzione che restituisce la posizione di un carattere in base all'indice e alla key.
+     * @param pos Posizione parziale dell'elemento
+     * @return Posizione reale dell'elemento
+     */
     private int getPosCript(int pos){
         int r = pos - (index - key);
 
@@ -92,6 +120,11 @@ public class DiscoCifrante {
         return r;
     }
 
+    /**
+     * Funzione che restituisce la posizione di un carattere in base all'indice e alla key.
+     * @param pos Posizione parziale dell'elemento
+     * @return Posizione reale dell'elemento
+     */
     private int getPosChiaro(int pos){
         int r = pos + (index - key);
 
