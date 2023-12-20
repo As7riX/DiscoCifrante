@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
     	
     	Criptazione c = new Criptazione();
-    	Decriptazioone d = new Decriptazione();
+    	Decriptazione d = new Decriptazione();
     	
     	InputStreamReader input = new InputStreamReader(System.in);
 		BufferedReader tastiera = new BufferedReader(input);
@@ -19,8 +19,8 @@ public class Main {
             System.out.println("Menu del Il disco cifrante di Leon Battista Alberti ");
             System.out.println();
             System.out.println("1) Inserisci il Messaggio tutto in MAIUSCOLO PLS (senza i caratteri accentati e H, K J, U, W, Y e Numeri ");
-            System.out.println("2) ottieni messaggio criptato");
-            System.out.println("3) decripta messaggio criptato");
+            System.out.println(" e ottieni il messaggio criptato");
+            System.out.println("2) decripta messaggio criptato");
             System.out.println("0) Esci :(");
             
             
@@ -49,7 +49,7 @@ public class Main {
             
             switch(Menu_Input) {
             
-            case 1: 
+            case 1:
             	try {
             		msg = tastiera.readLine();
             		
@@ -58,10 +58,6 @@ public class Main {
             		System.out.println("valore non corretto!");
             		return;
             	}
-            	
-            	break;
-            	
-            case 2:
             	output = c.cripta(msg);
             	char result = output.charAt(0);
             	System.out.println("Chiave: " + result);
@@ -69,7 +65,7 @@ public class Main {
             	System.out.println("Messaggio criptato: " + output);
             	break;
             	
-            case 3:
+            case 2:
             	System.out.println("inserisci messaggio criptato:");
             	try {
             		cript = tastiera.readLine();
@@ -107,4 +103,3 @@ public class Main {
     }
 
 }
-
