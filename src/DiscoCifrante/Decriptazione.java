@@ -4,12 +4,13 @@ public class Decriptazione{
 	private DiscoCifrante tabella;
 	private char chiave;
 	
-	public Decriptazione(char chiave) {
-		tabella = new DiscoCifrante(chiave);
-		this.chiave = chiave;
+	public Decriptazione() {
+
 	}
 	
-	public String decripta(String messaggio) {
+	public String decripta(String messaggio, char chiave) {
+		tabella = new DiscoCifrante(chiave);
+		this.chiave = chiave;
 		char[] mescript = messaggio.toCharArray();
 		char[] mesdec = new char[mescript.length];
 		tabella.setIndex(mescript[0]);
