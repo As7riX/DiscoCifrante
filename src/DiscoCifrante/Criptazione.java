@@ -12,16 +12,16 @@ public class Criptazione {
 	 }
 	 
 	 public String Cripta (String Input)  {
-	 	int Piazzamento;
-		 int j=0;
+		 int j=0;    //contatore di quanti elementi dello string ho inserito fino ad ora
 
 	      Random rand = new Random();          //serve a generare un numero randomico per la dimensione sell'array di char
 	      int Dimensione = rand.nextInt(100);       //0-99 
 	      int size = Input.length();
-		 char[] arrayChar = new char[size+Dimensione];   //creo un array di char di dimensione string + numero randomico
+		  char[] arrayChar = new char[size+Dimensione];   //creo un array di char di dimensione string + numero randomico
 		 
 		 
-		    char randomizedCharacter = (char) (rand.nextInt(26) + 'A');
+		 
+		  char randomizedCharacter = (char) (rand.nextInt(26) + 'A');
 		    arrayChar[0]=randomizedCharacter;
 			 tabella.setIndex(arrayChar[0]);
 
@@ -49,7 +49,9 @@ public class Criptazione {
 							randomic = rand.nextInt(5);
 					 }while((randomic>=1)||(randomic<=4));
 					 
-						arrayChar[i]=tabella.getCript(randomic);
+					    char c = (char) randomic;
+
+						arrayChar[i]=tabella.getCript(c);
 						tabella.setIndex(arrayChar[i]);
 
 				 }else {
@@ -65,7 +67,9 @@ public class Criptazione {
 						randomic = rand.nextInt(5);
 				 }while((randomic>=1)||(randomic<=4));
 				 
-					arrayChar[i]=tabella.getCript(randomic);
+				    char c = (char) randomic;
+
+					arrayChar[i]=tabella.getCript(c);
 					tabella.setIndex(arrayChar[i]);
 			 }
 
