@@ -1,5 +1,7 @@
 package DiscoCifrante;
 
+import java.util.Random;
+
 public class Criptazione {
     DiscoCifrante tabella;  // Roba del Garibaldi
     private char chiave;  // Chiave per la Criptazione
@@ -37,11 +39,9 @@ public class Criptazione {
             }
 
             if (numeroCasuale == 0) {   // Qui inserisco i numeri casuali da 1-4, li trasformo in char, li cripto e lo inserisco nel array di char
-                do {
-                    randomic = rand.nextInt(5);
-                } while ((randomic >= 1) && (randomic <= 4));
+                    randomic = rand.nextInt(4) + 49;
 
-                c = (char) randomic;
+                 c = (char)randomic;
 
                 arrayChar[i] = tabella.getCript(c);
                 tabella.setIndex(arrayChar[i]);
@@ -60,9 +60,4 @@ public class Criptazione {
 
         return str;
     }
-}
-
-	 
-	
-	
 }
