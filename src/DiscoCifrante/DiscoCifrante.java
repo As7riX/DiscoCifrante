@@ -9,24 +9,31 @@ import java.util.Random;
  */
 public class DiscoCifrante {
     static Random random = new Random();
+
+
     /**
      * Array di char che rappresentano i caratteri della ruota esterna.
      */
     private final static char[] caratteriChiaro = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z',  '1', '2', '3', '4'};
+
+
     /**
      * Array di char che rappresentano i caratteri della ruota interna.
      */
     private final static char[] caratteriCriptati = {'m', 'o', 'e', 'b', 'k', 'x', 'i', 'h', 'c', 'n', 'z', 'u', 'r', 'y', 'p', 'a', 'g', 'q', 'l', 'd', 'f', 't', 's', '&'};
+
 
     /**
      * Indice interno.
      */
     private int index;
 
+
     /**
      * Indice esterno.
      */
     private int key;
+
 
     /**
      * Funzione costruttore.
@@ -48,6 +55,7 @@ public class DiscoCifrante {
 
     }
 
+
     /**
      * Imposta l'indice in modo che coincida con la chiave.
      * @param index indice (Lettera Minuscola).
@@ -64,6 +72,7 @@ public class DiscoCifrante {
             i++;
         }
     }
+
 
     /**
      * Funzione che decifra un carattere in base ai valori della chiave e dell'indice.
@@ -85,6 +94,7 @@ public class DiscoCifrante {
 
         return r;
     }
+
 
     /**
      * Funzione che cripta un carattere in base ai valori della chiave e dell'indice.
@@ -125,6 +135,7 @@ public class DiscoCifrante {
         return caratteriCriptati[random.nextInt(24)];
     }
 
+
     /**
      * Funzione che restituisce la posizione di un carattere in base all'indice e alla key.
      * @param pos Posizione parziale dell'elemento
@@ -138,6 +149,7 @@ public class DiscoCifrante {
 
         return r;
     }
+
 
     /**
      * Funzione che restituisce la posizione di un carattere in base all'indice e alla key.
