@@ -2,15 +2,13 @@ package DiscoCifrante;
 /**
  *
  * @author Riccardo Lazzari
- *
  * classe che serve per decriptare che
  * ha per parametri la chiave di decriptazione
  * e la tabella di tipo DiscoCifrante
  *
  */
 public class Decriptazione{
-	private DiscoCifrante tabella;
-	private char chiave;
+
 	/**
 	 * costruttore
 	 */
@@ -23,8 +21,7 @@ public class Decriptazione{
 	 * @return messfin
 	 */
 	public String decripta(String messaggio,char chiave) {
-		tabella = new DiscoCifrante(chiave);
-		this.chiave = chiave;
+		DiscoCifrante tabella = new DiscoCifrante(chiave);
 		char[] mescript = messaggio.toCharArray();
 		char[] mesdec = new char[mescript.length];
 		tabella.setIndex(mescript[0]);
