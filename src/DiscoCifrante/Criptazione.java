@@ -9,8 +9,8 @@ public class Criptazione {
 	 
 	 
 	 public String Cripta (String Input)  {
-		 char c=DiscoCifrante.getRandKey();
-		 tabella = new DiscoCifrante(c);
+		  chiave=DiscoCifrante.getRandKey();
+		 tabella = new DiscoCifrante(chiave);
 		 int j=0;    //contatore di quanti elementi dello string ho inserito fino ad ora
 
 	      Random rand = new Random();          //serve a generare un numero randomico per la dimensione sell'array di char
