@@ -8,16 +8,15 @@ import java.util.Random;
  *
  */
 public class DiscoCifrante {
-    Random random = new Random();
+    static Random random = new Random();
     /**
      * Array di char che rappresentano i caratteri della ruota esterna.
      */
-    private final char[] caratteriChiaro = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z',  '1', '2', '3', '4'};
-
+    private final static char[] caratteriChiaro = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z',  '1', '2', '3', '4'};
     /**
      * Array di char che rappresentano i caratteri della ruota interna.
      */
-    private final char[] caratteriCriptati = {'m', 'o', 'e', 'b', 'k', 'x', 'i', 'h', 'c', 'n', 'z', 'u', 'r', 'y', 'p', 'a', 'g', 'q', 'l', 'd', 'f', 't', 's', '&'};
+    private final static char[] caratteriCriptati = {'m', 'o', 'e', 'b', 'k', 'x', 'i', 'h', 'c', 'n', 'z', 'u', 'r', 'y', 'p', 'a', 'g', 'q', 'l', 'd', 'f', 't', 's', '&'};
 
     /**
      * Indice interno.
@@ -108,11 +107,12 @@ public class DiscoCifrante {
         return r;
     }
 
+
     /**
      * Funzione che restituiesce una chiave random
      * @return Chiave random
      */
-    public char getRandKey(){
+    public static char getRandKey(){
         return caratteriChiaro[random.nextInt(24)];
     }
 
@@ -121,7 +121,7 @@ public class DiscoCifrante {
      * Funzione che restituisce un index random
      * @return Index random (carattere minuscolo)
      */
-    public char getRandIndex(){
+    public static char getRandIndex(){
         return caratteriCriptati[random.nextInt(24)];
     }
 
