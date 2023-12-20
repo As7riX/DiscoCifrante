@@ -27,7 +27,7 @@ public class Decriptazione{
 			}
 		}
 		String messfin = new String(mesdec);
-		messfin.replaceAll("\\s+", "");
+		messfin = messfin.replaceAll("\\s+", "");
 		return messfin;
 	}
 }
