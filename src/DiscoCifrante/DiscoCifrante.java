@@ -1,12 +1,14 @@
 package DiscoCifrante;
 
+import java.util.Random;
+
 /**
  * Classe che rappresenta il Disco Cifrante di Leon Battista Alberti.
  * Informazioni: <a href="https://it.wikipedia.org/wiki/Disco_cifrante">Wikipedia.org</a> <a href="http://www.crittologia.eu/storia/storia.html">Crittologia.eu</a>
  *
  */
 public class DiscoCifrante {
-
+    Random random = new Random();
     /**
      * Array di char che rappresentano i caratteri della ruota esterna.
      */
@@ -104,6 +106,23 @@ public class DiscoCifrante {
         }
 
         return r;
+    }
+
+    /**
+     * Funzione che restituiesce una chiave random
+     * @return Chiave random
+     */
+    public char getRandKey(){
+        return caratteriChiaro[random.nextInt(24)];
+    }
+
+
+    /**
+     * Funzione che restituisce un index random
+     * @return Index random (carattere minuscolo)
+     */
+    public char getRandIndex(){
+        return caratteriCriptati[random.nextInt(24)];
     }
 
     /**
