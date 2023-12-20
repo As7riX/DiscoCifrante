@@ -46,14 +46,14 @@ public class Criptazione {
 							randomic = rand.nextInt(5);
 					 }while((randomic>=1)||(randomic<=4));
 					 
-					     c = (char) randomic;
+					     char c = (char) randomic;
 
 						arrayChar[i]=tabella.getCript(c);
 						tabella.setIndex(arrayChar[i]);
 
 				 }else {  //prende un elemento di Input con charat con indice j, lo cripta e poi lo inserische nell'array e incrementa il contatore
 					 
-					     c = Input.charAt(j);
+					   char c = Input.charAt(j);
 						arrayChar[i]=tabella.getCript(c);
 						j++;
 					 
@@ -65,7 +65,7 @@ public class Criptazione {
 						randomic = rand.nextInt(5);
 				 }while((randomic>=1)||(randomic<=4));
 				 
-				     c = (char) randomic;
+				    char c = (char) randomic;
 
 					arrayChar[i]=tabella.getCript(c);
 					tabella.setIndex(arrayChar[i]);
