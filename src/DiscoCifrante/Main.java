@@ -5,6 +5,10 @@ import java.io.*;
 
 public class Main {
 
+	/*
+	 * metodo main dove è presentato il menù per riuscire a criptare e decriptare un messaggio
+	 */
+	
     public static void main(String[] args) {
     	
     	Criptazione c = new Criptazione();
