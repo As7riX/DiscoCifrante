@@ -8,8 +8,7 @@ public class Criptazione {
 
     public String Cripta(String input) {
         chiave = DiscoCifrante.getRandKey();  //Genera la chiave grazie alla static metod di Disco Rotante
-        tabella = new DiscoCifrante();    
-        tabella.DiscoCifrante(chiave);   
+        tabella = new DiscoCifrante(chiave);      
         int j = input.length();    // j=lunghezza dello string input
         int J=0;    //contatore dei caratteri inseriti
 
