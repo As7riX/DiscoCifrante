@@ -23,7 +23,7 @@ public class Main {
         
         do {
             System.out.println("-----MENU-----");
-            System.out.println("1) Cripta il messaggio, ricorda che non possono essere inserite le lettere: H,K,J,U,V,Y  e che tutti i caratteri devono essere maiuscoli!!");
+            System.out.println("1) Cripta il messaggio");
             System.out.println("2) Decripta il messaggio criptato");
             System.out.println("0) Esci :(");
             
