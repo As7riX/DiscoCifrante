@@ -42,6 +42,7 @@ public class Criptazione {
                 int randomic = rand.nextInt(4) + 49;
                 char c = (char) randomic;
                 System.out.println(c);
+                dimensione--;
 
                 arrayChar[i] = tabella.getCript(c);
                 tabella.setIndex(arrayChar[i]);
