@@ -1,14 +1,14 @@
 package DiscoCifrante;
 
-import java.util.Scanner;
 import java.io.*;
-
+/**
+ *  Classe Main
+ */
 public class Main {
 
-	/*
-	 * metodo main dove è presentato il menù per riuscire a criptare e decriptare un messaggio
+	/**
+	 * metodo main dove e' presentato il menu' per riuscire a criptare e decriptare un messaggio
 	 */
-	
     public static void main(String[] args) {
     	
     	Criptazione c = new Criptazione();
@@ -18,18 +18,14 @@ public class Main {
 		BufferedReader tastiera = new BufferedReader(input);
     	
         int Menu_Input;
-
+        System.out.println("Il disco cifrante di Leon Battista Alberti");
+        System.out.println();
+        
         do {
-            System.out.println("Menu del Il disco cifrante di Leon Battista Alberti ");
-            System.out.println();
-            System.out.println("1) Inserisci il Messaggio tutto in MAIUSCOLO PLS (senza i caratteri accentati e H, K J, U, W, Y e Numeri ");
-            System.out.println(" e ottieni il messaggio criptato");
-            System.out.println("2) decripta messaggio criptato");
+            System.out.println("-----MENU-----");
+            System.out.println("1) Cripta il messaggio");
+            System.out.println("2) Decripta il messaggio criptato");
             System.out.println("0) Esci :(");
-            
-            
-           // Scanner sc = new Scanner(System.in);
-            
             
             String lettura;
             String msg;		//messaggio utente in input
@@ -54,6 +50,7 @@ public class Main {
             switch(Menu_Input) {
             
             case 1:
+            	System.out.println("Inserisci il Messaggio tutto in MAIUSCOLO senza: caratteri accentati, H, K J, U, W, Y e Numeri ");
             	try {
             		msg = tastiera.readLine();
             		
@@ -62,15 +59,15 @@ public class Main {
             		System.out.println("valore non corretto!");
             		return;
             	}
-            	output = c.cripta(msg);
+            	output = c.Cripta(msg);
             	char result = output.charAt(0);
             	System.out.println("Chiave: " + result);
             	String mescript = output.substring(1);
-            	System.out.println("Messaggio criptato: " + output);
+            	System.out.println("Messaggio criptato: " + mescript);
             	break;
             	
             case 2:
-            	System.out.println("inserisci messaggio criptato:");
+            	System.out.print("inserisci messaggio criptato: ");
             	try {
             		cript = tastiera.readLine();
             		
@@ -80,7 +77,7 @@ public class Main {
             		return;
             	}
             	
-            	System.out.println("inserisci chiave di decriptazione:");
+            	System.out.print("inserisci chiave di decriptazione: ");
             	try {
             		key = tastiera.readLine().charAt(0);
             		
@@ -100,7 +97,7 @@ public class Main {
 
             }
 
-
+            System.out.println();
         }while(Menu_Input!=0);
 
 
