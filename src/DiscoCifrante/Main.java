@@ -3,6 +3,7 @@ package DiscoCifrante;
 import java.io.*;
 /**
  *  Classe Main
+ *  Informazioni: <a href="https://it.wikipedia.org/wiki/Disco_cifrante">Wikipedia.org</a> <a href="http://www.crittologia.eu/storia/storia.html">Crittologia.eu</a>
  */
 public class Main {
 
@@ -35,11 +36,9 @@ public class Main {
             String original;// messaggio decriptato in output
             
             try {
-            	
             	lettura = tastiera.readLine();
             	Menu_Input = Integer.parseInt(lettura);
-            	
-        		
+
         	}catch(Exception e)
         	{
         		System.out.println("valore non corretto!");

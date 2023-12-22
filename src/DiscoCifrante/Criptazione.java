@@ -2,24 +2,39 @@ package DiscoCifrante;
 
 import java.util.Random;
 
+/**
+ * Classe per la criptazione di un messaggio
+ * <a href="https://it.wikipedia.org/wiki/Disco_cifrante">Wikipedia.org</a> <a href="http://www.crittologia.eu/storia/storia.html">Crittologia.eu</a>
+ */
 public class Criptazione {
+    /**
+     * Instanza classe Disco Cifrante
+     */
     private DiscoCifrante tabella;
+
+    /**
+     * Chiave di decriptazione
+     */
     private char chiave;
 
+    /**
+     * Funzione che cripta un messaggio dato in input.
+     * @param input Messaggio da criptare
+     * @return Messaggio Criptato
+     */
     public String Cripta(String input) {
-        chiave = DiscoCifrante.getRandKey();  //Genera la chiave grazie alla static metod di Disco Rotante
-        tabella = new DiscoCifrante(chiave);      
-        int j = input.length();    // j=lunghezza dello string input
-        int J=0;    //contatore dei caratteri inseriti
+        chiave = DiscoCifrante.getRandKey();    // Genera la chiave grazie alla static metod di Disco Rotante
+        tabella = new DiscoCifrante(chiave);    // inizializzo la classe disco cifrante con la chiave
+        int j = input.length();                 // j=lunghezza dello string input
+        int J=0;                                // contatore dei caratteri inseriti
 
         Random rand = new Random();
-        int dimensione = rand.nextInt(5) + 1;    //genera da 1-5 che vervirà a stabilire quanti numeri inserire nel messaggio criptato
-        int lunghezza = input.length() + dimensione + 2;       //creo un int che servirà a stabilire la dimensione del messaggio criptato = dimensio dello string + numeri da inserire + la chiave di deCriptazione + la prima lettera roba bho lo sai tu
-        char[] arrayChar = new char[lunghezza];    //Instanzio l'array 
+        int dimensione = rand.nextInt(5) + 1;            //genera da 1-5 che vervirà a stabilire quanti numeri inserire nel messaggio criptato
+        int lunghezza = input.length() + dimensione + 2;        //creo un int che servirà a stabilire la dimensione del messaggio criptato = dimensio dello string + numeri da inserire + la chiave di deCriptazione + la prima lettera roba bho lo sai tu
+        char[] arrayChar = new char[lunghezza];                 //Instanzio l'array
 
-        arrayChar[0] = chiave;    //inserisco la chiave come primo elemento dell'array
-
-        arrayChar[1] = tabella.getRandIndex();    //inserisco il coso  come secondo elemento dell'array
+        arrayChar[0] = chiave;                      //inserisco la chiave come primo elemento dell'array
+        arrayChar[1] = DiscoCifrante.getRandIndex();      //inserisco il primo indice minuscolo come secondo elemento dell'array
 
 
         tabella.setIndex(arrayChar[1]);  //setto per la prima volta la ruota chaive = chiave generata   nimuscola = secondo elemento dell'array char
@@ -42,11 +57,11 @@ public class Criptazione {
             }
 
             if (numeroCasuale == 0) {
-                int randomic = rand.nextInt(4) + 49;  //questo genera numeri da 49-53 che corrispondiono da 1-4 nella tabella ascii
+                int randomic = rand.nextInt(4) + 49;  //questo genera numeri da 49-52 che corrispondiono da 1-4 nella tabella ascii
                 char c = (char) randomic;  //converto il numero int generato randomicamente in char sulla base della tabella ascii
 
                 arrayChar[i] = tabella.getCript(c);
-                                dimensione--;   //ho inserito un numero nella tabella quindi riduco il valore dimensione = quantità di numeri da inserire di 1
+                dimensione--;   //ho inserito un numero nella tabella quindi riduco il valore dimensione = quantità di numeri da inserire di 1
 
                 tabella.setIndex(arrayChar[i]);   //sposto la ruota inferiore un base al carattere vomitato da get cript cioè il numero criptato
             } else {
@@ -61,7 +76,6 @@ public class Criptazione {
         }
 
         String str = new String(arrayChar);  //converto la'array di char in una stringa
-        
 
         return str; //mando come  output il messaggio criptato
     }

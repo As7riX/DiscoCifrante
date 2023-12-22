@@ -8,6 +8,9 @@ import java.util.Random;
  *
  */
 public class DiscoCifrante {
+    /**
+     * Classe random
+     */
     static Random random = new Random();
 
 

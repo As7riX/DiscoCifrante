@@ -1,7 +1,7 @@
 package DiscoCifrante;
 /**
  * Classe che si occupa della decriptazione del messaggio tramite il disco cifrante
- *
+ * Informazioni: <a href="https://it.wikipedia.org/wiki/Disco_cifrante">Wikipedia.org</a> <a href="http://www.crittologia.eu/storia/storia.html">Crittologia.eu</a>
  */
 public class Decriptazione{
 
@@ -10,6 +10,7 @@ public class Decriptazione{
 	 */
 	public Decriptazione() {
 	}
+
 	/**
 	 * Funzione che decripta il messaggio
 	 * @param messaggio messaggio da decriptare
@@ -18,8 +19,8 @@ public class Decriptazione{
 	 */
 	public String decripta(String messaggio,char chiave) {
 		DiscoCifrante tabella = new DiscoCifrante(chiave);         //creo un oggetto di tipo DiscoCifrante con la chiave
-		char[] mescript = messaggio.toCharArray();		   //creo un'arrey di char in cui inserisco il messaggio
-		char[] mesdec = new char[mescript.length];		   //creo un'arrey di char in cui inserirò i caratteri decripati
+		char[] mescript = messaggio.toCharArray();		   //creo un'array di char in cui inserisco il messaggio
+		char[] mesdec = new char[mescript.length];		   //creo un'array di char in cui inserirò i caratteri decripati
 		
 		tabella.setIndex(mescript[0]);			           //uso la funzione setindex sul primo char del messaggio per settare il disco cifrato
 		mesdec[0]=' ';									   
@@ -32,10 +33,10 @@ public class Decriptazione{
 				mesdec[i]=' ';
 				
 			}else {
-				mesdec[i]=tabella.getChiaro(mescript[i]);  //decripto il carattere e lo inserisco nell'arrey
+				mesdec[i]=tabella.getChiaro(mescript[i]);  //decripto il carattere e lo inserisco nell'array
 			}
 		}
-		String messfin = new String(mesdec);               //creo una stringa con i caratteri presenti nell'arrey mesdec
+		String messfin = new String(mesdec);               //creo una stringa con i caratteri presenti nell'array mesdec
 		messfin = messfin.replaceAll("\\s+", "");          //elimino gli spazi
 		return messfin;
 	}
